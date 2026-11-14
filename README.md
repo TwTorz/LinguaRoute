@@ -26,10 +26,8 @@ cd <repo>
 # start the app
 ```
 
-## Team
-| Name | Role | GitHub |
-|------|------|--------|
-|      |      |        |
+## Built by
+Your name ([@TwTorz](https://github.com/TwTorz))
 
 ## What's next
 - Next feature if we had more time
