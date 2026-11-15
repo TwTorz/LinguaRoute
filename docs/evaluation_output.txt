@@ -1,0 +1,49 @@
+# Output of: python3 app/train_language_model.py  (run 2026-11-15 10:06 EST)
+
+Balanced Tatoeba sample:
+label
+english     5000
+japanese    5000
+mandarin    5000
+spanish     5000
+Name: count, dtype: int64
+Supported-vs-other validation (threshold 70%): 96.6% of supported messages accepted; 99.6% of training-negative languages rejected
+Validation accuracy (word n-grams (1–2)): 0.7350
+Validation accuracy (character n-grams (2–5)): 0.9960
+
+Single-class baseline (always Mandarin) accuracy: 0.25
+
+Held-out Tatoeba test accuracy: 0.9935
+Automatic-routing policy (supported-language score >= 70%, language confidence >= 85%, at least 8 letters): 3301/4000 messages eligible; 0 errors among eligible messages
+
+Unseen-language rejection (Afrikaans and Dutch were not detector training languages):
+  Afrikaans: rejected 531/800 (66.4%) at 70% threshold
+  Dutch: rejected 618/800 (77.2%) at 70% threshold
+
+Per-language report:
+              precision    recall  f1-score   support
+
+     english     0.9960    0.9970    0.9965      1000
+    japanese     1.0000    0.9830    0.9914      1000
+    mandarin     0.9794    0.9970    0.9881      1000
+     spanish     0.9990    0.9970    0.9980      1000
+
+    accuracy                         0.9935      4000
+   macro avg     0.9936    0.9935    0.9935      4000
+weighted avg     0.9936    0.9935    0.9935      4000
+
+
+Confusion matrix:
+[[997   0   0   3]
+ [  2 997   0   1]
+ [  0   0 983  17]
+ [  2   1   0 997]]
+
+Mistake counts by true and predicted language:
+true      pred    
+japanese  mandarin    17
+english   mandarin     3
+mandarin  english      2
+spanish   english      2
+mandarin  spanish      1
+spanish   mandarin     1
